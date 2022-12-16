@@ -66,7 +66,6 @@ max_manhattan = max([manhattan_distance(bx, by, sx, sy) for (bx, by), (sx, sy) i
 
 y = 2000000
 positions = [
-    position_can_have_beacon(i, y, beacons, sensors)
-    for i in range(min_x - max_manhattan * 2, max_x + max_manhattan * 2 + 1)
+    position_can_have_beacon(i, y, beacons, sensors) for i in range(min_x - max_manhattan, max_x + max_manhattan + 1)
 ]
 print(sum([p == False for p in positions]))
